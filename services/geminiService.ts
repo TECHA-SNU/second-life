@@ -441,7 +441,7 @@ export const generateSelfUnderstandingTurn = async (
   history: { role: 'user' | 'model', content: string }[],
   isFinal: boolean = false
 ): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   
   const contents = history.map(h => ({
     role: h.role,
