@@ -2,7 +2,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
 export const generateCareerAdvice = async (prompt: string): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   try {
     const model = 'gemini-3-flash-preview';
     const response = await ai.models.generateContent({
